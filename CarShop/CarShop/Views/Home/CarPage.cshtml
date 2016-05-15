@@ -1,0 +1,20 @@
+﻿@model CarShop.Models.Car
+@{
+    Layout = "/Views/MusterView.cshtml";
+}
+
+<table>
+    <tr>
+        <th id="main_title" colspan="3">
+            <h1>@Model.NameOfCar</h1>
+        </th>
+    </tr>
+    <tr class="big_pic">
+        <td colspan="3"><img id="Preview" src="@Model.OtherPhotoes.Split(',')[0]" /></td>
+    </tr>
+    <tr class="small_pic">
+        <td><img onclick="SetIMG(this.src)" src="@Model.OtherPhotoes.Split(',')[1]" /></td>
+        <td><img onclick="SetIMG(this.src)" src="@Model.OtherPhotoes.Split(',')[2]" /></td>
+        <td><img onclick="SetIMG(this.src)" src="@Model.OtherPhotoes.Split(',')[3]" /></td>
+    </tr>
+</table>

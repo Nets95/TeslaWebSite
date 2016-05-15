@@ -1,0 +1,16 @@
+﻿
+
+
+    <img alt="Image" src="/Content/images/Font.jpg" />
+    <form onsubmit="return false" action="Home/Form" method="POST">
+        <fieldset>
+            <legend>Order processing</legend>
+            <input type="text" name="Name" placeholder="Enter your name" required /><br />
+            <input type="tel" name="Tel" placeholder="Enter your phone number" required patern="[0-9]{3}[0-9]{3}[0-9]{4}" /><br />
+            <select name="Car" required>
+                @Html.Action("FormOptions", "Home", new { item_id = ViewBag.Item })
+            </select><br />
+            <input type="submit" , value="Order" />
+        </fieldset>
+    </form>
+

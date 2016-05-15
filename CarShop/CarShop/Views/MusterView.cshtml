@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "MusterView";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tesla</title>
+    <link href="/Content/CSS/styles.css" rel="stylesheet" type="text/css" />
+    <script src="/Content/JS/jquery-1.11.0.min.js"></script>
+    <script src="/Content/JS/scrypts.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <img alt="Image" src="/Content/images/tesla_Header.jpg" />
+        </div>
+        <div id="content">
+            <div id="nav">
+                <ul>
+                    <li><a href="/Home/Index"><img alt="Image" src="/Content/images/Logo.jpg" /></a></li>
+                    @Html.Action("Nav","Home")
+                </ul>
+
+            </div>
+            <div id="main">
+               @RenderBody();
+            </div>
+            
+        </div>
+        <div id="order">
+            <table>
+                <tr>
+
+                    <td class="big_card" colspan="3">
+                        <img alt="Image" src="/Content/images/Font.jpg" />
+                        <form onsubmit="return false" action="Home/Form" method="POST">
+                            <fieldset>
+                                <legend>Order processing</legend>
+                                <input type="text" name="Name" placeholder="Enter your name" required /><br />
+
+                                <input type="tel" name="Tel" placeholder="Enter your phone number" required patern="[0-9]{3}[0-9]{3}[0-9]{4}" /><br />
+
+
+                                <select name="Car" required>
+                                    <option value="0">Model S</option>
+                                    <option value="1">Model X</option>
+                                    <option value="2">Model 3</option>
+
+                                </select><br />
+                                <input type="submit" , value="Order" />
+                            </fieldset>
+                        </form>
+                    </td>
+                <tr>
+            </table>
+
+        </div>
+       
+        <div id="footer">All rights reserved by Tesla corporation</div>
+    </div>
+</body>
+</html>
+

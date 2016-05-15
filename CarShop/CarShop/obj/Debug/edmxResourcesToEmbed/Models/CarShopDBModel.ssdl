@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarShopDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CarShopDB.dbo.Cars' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Cars">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="NameOfCar" />
+      <PropertyRef Name="ClassOfCar" />
+      <PropertyRef Name="Description" />
+      <PropertyRef Name="MainPhoto" />
+      <PropertyRef Name="OtherPhotoes" />
+      <PropertyRef Name="Count" />
+      <PropertyRef Name="Price" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameOfCar" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ClassOfCar" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="350" Nullable="false" />
+    <Property Name="MainPhoto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="OtherPhotoes" Type="nvarchar" MaxLength="850" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CarShopDB.dbo.Orders' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="CarID" />
+      <PropertyRef Name="UserPhone" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CarID" Type="int" Nullable="false" />
+    <Property Name="UserPhone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CarShopDBModelStoreContainer">
+    <EntitySet Name="Cars" EntityType="Self.Cars" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Cars].[id] AS [id], 
+    [Cars].[NameOfCar] AS [NameOfCar], 
+    [Cars].[ClassOfCar] AS [ClassOfCar], 
+    [Cars].[Description] AS [Description], 
+    [Cars].[MainPhoto] AS [MainPhoto], 
+    [Cars].[OtherPhotoes] AS [OtherPhotoes], 
+    [Cars].[Count] AS [Count], 
+    [Cars].[Price] AS [Price]
+    FROM [dbo].[Cars] AS [Cars]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Orders" EntityType="Self.Orders" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Orders].[id] AS [id], 
+    [Orders].[UserName] AS [UserName], 
+    [Orders].[CarID] AS [CarID], 
+    [Orders].[UserPhone] AS [UserPhone], 
+    [Orders].[Status] AS [Status]
+    FROM [dbo].[Orders] AS [Orders]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

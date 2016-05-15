@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CarShopDBModelStoreContainer" CdmEntityContainer="CarShopDBEntities">
+    <EntitySetMapping Name="Cars">
+      <EntityTypeMapping TypeName="CarShopDBModel.Car">
+        <MappingFragment StoreEntitySet="Cars">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NameOfCar" ColumnName="NameOfCar" />
+          <ScalarProperty Name="ClassOfCar" ColumnName="ClassOfCar" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="MainPhoto" ColumnName="MainPhoto" />
+          <ScalarProperty Name="OtherPhotoes" ColumnName="OtherPhotoes" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="CarShopDBModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="CarID" ColumnName="CarID" />
+          <ScalarProperty Name="UserPhone" ColumnName="UserPhone" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
